@@ -32,6 +32,8 @@ class Composite:
         self.proj   = g.GetProjection()
         self.outgeo = g.GetGeoTransform()
         
+
+
         self.nodata = g.GetRasterBand(1).GetNoDataValue()
         self.calculation = calculation
 
@@ -93,10 +95,9 @@ class Composite:
                 values_m = np.ma.masked_where(values == self.nodata, values)
                 if calculation == 'mean':
                     new_val = np.mean(values_m)
-                    med[i,j] = new_val
                 if calculation == 'median':
                     new_val = np.median(values_m)
-                    med[i,j] = new_val
+                med[i,j] = new_val
         
         return med	
 
@@ -118,7 +119,8 @@ class Composite:
 
         band = dst_ds.GetRasterBand(1)
         band.WriteArray(arr)
-        band.SetNoDataValue(self.nodata)
+        if self.nodata is not None:
+            band.SetNoDataValue(self.nodata)
 
 
 
