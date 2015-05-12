@@ -1,4 +1,7 @@
 # composite-rasters
+
+[![Code Climate](https://codeclimate.com/github/lo-ise/composite-rasters/badges/gpa.svg)](https://codeclimate.com/github/lo-ise/composite-rasters)
+
 Calculates mean/median raster composites from a list of files. 
 
 Create instance of Composite() class with list of files, output file prefix and mean/median as arguments
