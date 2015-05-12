@@ -23,28 +23,12 @@ class TestComp(unittest.TestCase):
 
         """
 
-        self.arr1 = np.zeros((2, 2))
-        count = 1
-        for i in range(0, 2):
-            for j in range(0, 2):
-                self.arr1[i,j] = count
-                count += 1
-
-        self.arr2 = np.zeros((2, 2))
-        count = 5
-        for i in range(0, 2):
-            for j in range(0, 2):
-                self.arr2[i,j] = count
-                count += 1
-
-        self.arr3 = np.zeros((2, 2))
-        count = 9
-        for i in range(0, 2):
-            for j in range(0, 2):
-                self.arr3[i,j] = count
-                count += 1
+        self.arr1 = np.array([[1, 2], [3, 4]])
+        self.arr2 = np.array([[5, 6], [7, 8]])
+        self.arr3 = np.array([[9, 10], [11, 12]])
 
         self.arr = np.zeros((3, 2, 2))
+        
         self.arr[0,...] = self.arr1
         self.arr[1,...] = self.arr2
         self.arr[2,...] = self.arr3
@@ -83,8 +67,8 @@ class TestComp(unittest.TestCase):
         self.setUp()
 
         """
+        
         test_arr = self.C.getarray(self.filelist)
-
         self.assertEqual(test_arr.all(), self.arr.all(), 'Composite.getarray produced wrong result')
 
 
