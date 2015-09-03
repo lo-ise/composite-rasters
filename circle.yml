@@ -1,6 +1,6 @@
 dependencies:
   pre:
-    - pip install gdal 
+    - sudo apt-get install python-gdal 
 
 test:
   override:
