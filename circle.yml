@@ -1,3 +1,7 @@
+dependencies:
+  pre:
+    - pip install osgeo --allow-external osgeo --allow-unverified osgeo
+
 test:
   override:
     - python composite_test.py
