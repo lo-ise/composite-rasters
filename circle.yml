@@ -1,0 +1,3 @@
+test:
+  override:
+    - python composite_test.py
