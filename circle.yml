@@ -1,6 +1,6 @@
 dependencies:
   pre:
-    - pip install osgeo --allow-external osgeo --allow-unverified osgeo
+    - pip install gdal --allow-external gdal --allow-unverified gdal
 
 test:
   override:
